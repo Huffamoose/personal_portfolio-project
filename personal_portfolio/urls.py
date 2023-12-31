@@ -21,8 +21,9 @@ from django.conf import settings  # This is new
 from portfolio import views
 
 urlpatterns = [
-    path("", views.home, name="home"),
     path("admin", admin.site.urls),
+    path("", views.home, name="home"),
+    path("blog", include("blog.urls")),
 ]
 
 urlpatterns += static(
